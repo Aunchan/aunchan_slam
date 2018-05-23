@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<launch>
+
+    <!-- Map server -->
+    <arg name="map_file" default="$(find aunchan_slam)/maps/test_map.yaml"/>
+    <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)"/>
+
+    <!-- Set Laser scan matcher-->
+    <node pkg="laser_scan_matcher" type="laser_scan_matcher_node" name="laser_scan_matcher_node" output="screen">
+        <param name="fixed_frame" value = "odom"/>
+        <param name="max_iterations" value="10"/>
+    </node>
+
+    <!-- Localization -->
+    <node pkg="amcl" type="amcl" name="amcl" output="screen">
+        <param name="odom_frame_id" value="odom"/>
+        <param name="odom_model_type" value="diff-corrected"/>
+        <param name="base_frame_id" value="base_link"/>
+        <param name="update_min_d" value="0.01"/>
+        <param name="update_min_a" value="0.01"/>
+        <param name="max_particles" value="500"/>
+    </node>
+
+    <!-- Move base -->
+
+
+</launch>
