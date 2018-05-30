@@ -3,6 +3,7 @@
 
     
 
+<!--<node pkg="tf" type="static_transform_publisher" name="map2baselink" args="0 0 0 0 0  0 map base_link 50" />-->
 
  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find aunchan_slam)/cfg/aunchan_rviz_cfg.rviz"/>
 
@@ -26,11 +27,11 @@
     <param name="srt" value="0.2"/>
     <param name="str" value="0.1"/>
     <param name="stt" value="0.2"/>
-    <param name="linearUpdate" value="1.0"/>
-    <param name="angularUpdate" value="0.5"/>
-    <param name="temporalUpdate" value="0.4"/>
+    <param name="linearUpdate" value="0.01"/>
+    <param name="angularUpdate" value="0.01"/>
+    <param name="temporalUpdate" value="0.05"/>
     <param name="resampleThreshold" value="0.5"/>
-    <param name="particles" value="10"/>
+    <param name="particles" value="80"/>
     <param name="xmin" value="-5.0"/>
     <param name="ymin" value="-5.0"/>
     <param name="xmax" value="5.0"/>

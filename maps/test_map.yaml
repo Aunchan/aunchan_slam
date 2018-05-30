@@ -1,6 +1,6 @@
-image: /home/sweilz/aunchan_ws/src/aunchan_slam/maps/test_map.pgm
-resolution: 0.010000
-origin: [-5.000000, -5.000000, 0.000000]
+image: test_map.pgm
+resolution: 0.025000
+origin: [-12.812499, -12.812499, 0.000000]
 negate: 0
 occupied_thresh: 0.65
 free_thresh: 0.196

@@ -1,8 +1,9 @@
 <?xml version="1.0"?>
 <launch>
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find aunchan_slam)/cfg/aunchan_rviz_cfg.rviz"/>
 
     <!-- Map server -->
-    <arg name="map_file" default="$(find aunchan_slam)/maps/test_map.yaml"/>
+    <arg name="map_file" default="$(find aunchan_slam)/maps/test_map2.yaml"/>
     <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)"/>
 
     <!-- Set Laser scan matcher-->
